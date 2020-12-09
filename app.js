@@ -1,13 +1,12 @@
-// const fs = require('fs');
-
-// // fs.writeFileSync('notes.txt', 'This file was created by Node.js!')
-// fs.appendFileSync('notes.txt', 'This line was appended by Node.js!')
-
-const validator = require('validator');
 const getNotes = require('./notes.js');
+const chalk = require('chalk');
 
-const notesToPrint = getNotes();
+const command = process.argv[2];
 
-console.log(notesToPrint);
+console.log(process.argv);
 
-console.log(validator.isEmail('Edenik5@gmail.com'));
+if(command === 'add'){
+    console.log('Adding note!');
+} else if(command === 'remove'){
+    console.log('Removing Note!');
+}
